@@ -32,15 +32,26 @@ https://www.acmicpc.net/problem/2884
 예제 출력
 9 25
 """
-h, m = map(int, input().split())
 
-m2 = m-45
-if m2 < 0:
-    if h == 23:
-        print(h-1, 60+m2)
-    elif h == 0:
-        print(23, 60+m2)
-    else:
-        print(h-1, 60+m2)
-else:
-    print(h, m2)
+'''
+개선 전 코드
+'''
+# h, m = map(int, input().split())
+#
+# m2 = m-45
+# if m2 < 0:
+#     if h == 23:
+#         print(h-1, 60+m2)
+#     elif h == 0:
+#         print(23, 60+m2)
+#     else:
+#         print(h-1, 60+m2)
+# else:
+#     print(h, m2)
+
+'''
+개선 후 코드
+'''
+h, m = map(int, input().split())
+t = h * 60 + m - 45
+print(t // 60 % 24, t % 60)
